@@ -82,7 +82,7 @@ const Projects = () => {
 
                                         <Button
                                             variant="outline-light"
-                                            className="rounded border-0 col-5"
+                                            className="seemore rounded border-0 col-5"
                                             onClick={() =>
                                                 setExpandedProject(
                                                     expandedProject === index ? null : index

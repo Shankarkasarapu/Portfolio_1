@@ -17,7 +17,7 @@ const Experience = () => {
       icon: mern,
     },
     {
-      title: 'Data Analytics and Visualization Intern - Remote',
+      title: 'Data Analytics and Visualization Intern',
       company: 'Accenture (Forage)',
       date: 'April 2024',
       icon: forage,
@@ -36,9 +36,10 @@ const Experience = () => {
               contentStyle={{
                 background: 'linear-gradient(to right, rgba(93, 182, 207, 0.4), rgba(214, 192, 92, 0.4))',
                 color: '#fff',
+                
               }}
               contentArrowStyle={{
-                borderRight: '7px solid rgb(35, 38, 49)',
+                borderRight: '7px solid rgb(166, 168, 173)',
               }}
               date={experience.date}
               iconStyle={{
@@ -74,7 +75,7 @@ const Experience = () => {
                   fontSize: '16px',
                   fontWeight: '600',
                   fontFamily: 'Comic Neue',
-                  color: 'rgb(214, 192, 92)',
+                  color: 'rgb(231, 207, 100)',
                 }}
               >
                 {experience.company}
