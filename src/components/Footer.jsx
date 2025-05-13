@@ -18,11 +18,14 @@ const Footer = () => {
                         <div className='col-5 pb-4 text-center'>
                             <p className='ps-4 d-flex'>
                                 <img src={mail} alt="mail" className='mail-icon pe-3' />
-                                kasarapugowrishankar@gmail.com
+                                <p className='m-0'>
+                                    kasarapugowrishankar@gmail.com</p>
                             </p>
                             <p className='ps-4 d-flex align-items-center'>
                                 <img src={pin} alt="pin" className='pin-icon pe-3' />
-                                Rajam,Vizianagarm
+                                 <p className='m-0'>
+                                    visakhapatnam,AP
+                                 </p>
                             </p>
                         </div>
                     </Col>
