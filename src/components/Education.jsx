@@ -4,7 +4,7 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 const educationData = [
 
-    { year: "2021-25", title: "Bachelor's of Technology ",marks :"CGPA 8.8/10", description: "Currently pursuing my Bachelor's of Technology in the stream of Artificial Intelligence and Machine Learning at GMR Intitute of Technology" },
+    { year: "2021-25", title: "Bachelor's of Technology ",marks :"CGPA 8.9/10", description: "Currently pursuing my Bachelor's of Technology in the stream of Artificial Intelligence and Machine Learning at GMR Intitute of Technology" },
 
     { year: "2019-21", title: "Intermediate",marks:"Percentage 96%", description: "Completed Higher Secondary Education from Sri Chaitanya Junior College." },
     

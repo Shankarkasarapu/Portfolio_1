@@ -32,7 +32,7 @@ const skillsData = [
 
 const Skills = () => {
     return (
-        <div className="App px-4 pb-5" id="skills">
+        <div className="App px-0 pb-5" id="skills">
             <Container>
                 <Row className='pb-4'>
                     <h1 className="head pt-5 pb-5">My Skills</h1>
@@ -40,13 +40,13 @@ const Skills = () => {
                         {skillsData.map((skill, index) => (
                             <Card
                                 key={index}
-                                className="skillcard col-4 col-sm-3 col-md-2 col-lg-2 col-xl-1  m-2 ">
+                                className="skillcard col-3 col-sm-3 col-md-2 col-lg-2 col-xl-1  m-2 ">
 
                                 <Card.Img
                                     variant="top"
                                     className='animate__animated animate__zoomIn text-center mx-auto'
                                     src={skill.icon}
-                                    style={{ width: "70px ", height: "70px" }}
+                                    style={{ width: "65px ", height: "65px" }}
                                 />
                                 <Card.Title className='text-white text-center pt-3'><h5>{skill.title}</h5></Card.Title>
 
