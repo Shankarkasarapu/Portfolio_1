@@ -1,133 +1,239 @@
+// import React, { useState } from "react";
+// import { Container, Row, Col } from "react-bootstrap";
+// import touch from "../assets/img/get_in_touch.png";
+
+// const LetsConnect = () => {
+//   const [send, setSend] = useState("Send");
+//   const [statusColor, setStatusColor] = useState("#fff");
+//   const [showAnimation, setShowAnimation] = useState(false);
+//   const my_access_key = import.meta.env.VITE_APP_ACCESS_KEY;
+
+//   const formdetails = async (event) => {
+//     event.preventDefault();
+//     setSend("Sending...");
+
+//     const formData = new FormData(event.target);
+//     formData.append("access_key", my_access_key);
+
+//     try {
+//       const response = await fetch("https://api.web3forms.com/submit", {
+//         method: "POST",
+//         body: formData,
+//       });
+
+//       const data = await response.json();
+
+//       if (data.success) {
+//         setSend("Sent!");
+//         setShowAnimation(true);
+//         setTimeout(() => {
+//           setSend("Send");
+//           setStatusColor("#fff");
+//           setShowAnimation(false);
+//           event.target.reset();
+//         }, 3000);
+//       } else {
+//         setSend("Failed 😢");
+//         setStatusColor("red");
+//         setTimeout(() => setSend("Send"), 3000);
+//       }
+//     } catch (error) {
+//       console.error("Error:", error);
+//       setSend("Failed 😢");
+//       setStatusColor("red");
+//       setTimeout(() => setSend("Send"), 3000);
+//     }
+//   };
+
+//   return (
+//     <section className="connect py-5" id="connect">
+//       <Container>
+//         <Row className="align-items-center pb-5">
+//           {/* Left Side - Form */}
+//           <Col md={7} className="mb-5 mb-md-0">
+//             <div className="form-box p-4 p-lg-5 rounded-4 shadow-lg">
+//               <h2 className="text-center text-white mb-4">Get In Touch</h2>
+//               <form onSubmit={formdetails}>
+//                 <Row>
+//                   <Col sm={6} className="mb-3">
+//                     <input
+//                       type="text"
+//                       name="first_name"
+//                       placeholder="First name"
+//                       className="field form-control"
+//                       required
+//                     />
+//                   </Col>
+//                   <Col sm={6} className="mb-3">
+//                     <input
+//                       type="text"
+//                       name="last_name"
+//                       placeholder="Last name"
+//                       className="field form-control"
+//                       required
+//                     />
+//                   </Col>
+//                 </Row>
+//                 <input
+//                   type="email"
+//                   name="email"
+//                   placeholder="Email"
+//                   className="field form-control mb-3"
+//                   required
+//                 />
+//                 <textarea
+//                   name="message"
+//                   placeholder="Message"
+//                   rows="5"
+//                   className="field form-control mb-3"
+//                   required
+//                 ></textarea>
+
+//                 <div className="text-center">
+//                   <button
+//                     type="submit"
+//                     className="btn-connect px-4 py-2 rounded-3"
+//                     style={{ color: statusColor }}
+//                   >
+//                     {send}
+//                   </button>
+//                   {showAnimation && send === "Sent!" && (
+//                     <p className="mt-3 text-success fw-semibold">
+//                       ✔ Email Sent Successfully! 😍
+//                     </p>
+//                   )}
+//                 </div>
+//               </form>
+//             </div>
+//           </Col>
+//           {/* Right Side - Image */}
+//           <Col md={5} className="text-center d-none">
+//             <img src={touch} alt="Get In Touch" className="getintouch" />
+//           </Col>
+//         </Row>
+//       </Container>
+//     </section>
+//   );
+// };
+
+// export default LetsConnect;
 import React, { useState } from "react";
-import { Container, Row } from "react-bootstrap";
-import touch from "../assets/img/get_in_touch.png";
+import { Container, Row, Col } from "react-bootstrap";
+import touch from "../assets/img/connect.png";
 
 const LetsConnect = () => {
-    const [send, setSend] = useState("Send");
-    const [statusColor, setStatusColor] = useState();
-    const [showAnimation, setShowAnimation] = useState(false);
-    const my_access_key= import.meta.env.VITE_APP_ACCESS_KEY
+  const [send, setSend] = useState("Send");
+  const [statusColor, setStatusColor] = useState("#fff");
+  const [showAnimation, setShowAnimation] = useState(false);
+  const my_access_key = import.meta.env.VITE_APP_ACCESS_KEY;
 
-    const formdetails = async (event) => {
-        event.preventDefault();
-        setSend("Sending...");
+  const formdetails = async (event) => {
+    event.preventDefault();
+    setSend("Sending...");
 
-        const formData = new FormData(event.target);
-        formData.append("access_key", my_access_key );
+    const formData = new FormData(event.target);
+    formData.append("access_key", my_access_key);
 
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData,
-            });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-            const data = await response.json();
+      const data = await response.json();
 
-            if (data.success) {
+      if (data.success) {
+        setSend("Sent!");
+        setShowAnimation(true);
+        setTimeout(() => {
+          setSend("Send");
+          setStatusColor("#fff");
+          setShowAnimation(false);
+          event.target.reset();
+        }, 3000);
+      } else {
+        setSend("Failed 😢");
+        setStatusColor("red");
+        setTimeout(() => setSend("Send"), 3000);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setSend("Failed 😢");
+      setStatusColor("red");
+      setTimeout(() => setSend("Send"), 3000);
+    }
+  };
 
-                setSend("Sent!");
-                setShowAnimation(true);
-                setTimeout(() => {
-                    setSend("Send");
-                    setStatusColor("white");
-                    setShowAnimation(false);
-                    event.target.reset();
-                }, 3000);
-            } else {
-                console.error("Error:", data);
-                setSend("Failed !!😢");
-                setStatusColor("red");
-                setTimeout(() => {
-                    setSend("Send");
-                    setStatusColor("white");
-                }, 3300);
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            setSend("Failed !!😢");
-            setStatusColor("red");
-            setTimeout(() => {
-                setSend("Send");
-                setStatusColor("white");
-            }, 3000);
-        }
-    };
-
-    return (
-        <div className="connect" id="connect">
-            <Container>
+  return (
+    <section className="connect py-5" id="connect">
+      <Container>
+        <Row className=" py-5 px-0 px-md-5 d-flex gap-5 align-items-center justify-content-center">
+          {/* Left Side - Form */}
+          <Col md={6} className="mb-5 mb-md-0 ">
+            <div className="form-box p-4 p-lg-5 rounded-4">
+              <h2 className="text-center text-white mb-4">Get In Touch</h2>
+              <form onSubmit={formdetails}>
                 <Row>
-                    <div className="pb-5 d-flex justify-content-center">
-                        <form
-                            xs={12}
-                            md={6}
-                            className="col-lg-6 animate__animated animate__fadeIn pt-3"
-                            onSubmit={formdetails}
-                        >
-                            <div className="col-11">
-                                <h1 className="head py-5">Get In Touch</h1>
-                                <div className="ps-5 text-center">
-                                    <div className="fields d-flex justify-content-between w-100">
-                                        <input
-                                            type="text"
-                                            name="first_name"
-                                            placeholder="First name"
-                                            className="field inp border p-3"
-                                            required
-                                        />
-                                        <input
-                                            type="text"
-                                            name="last_name"
-                                            placeholder="Last name"
-                                            className="field inp border p-3"
-                                            required
-                                        />
-                                    </div>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="Email"
-                                        className="field border col-12 p-3"
-                                        required
-                                    />
-                                    <textarea
-                                        name="message"
-                                        className="field p-5 px-4 pt-4 col-12 border"
-                                        placeholder="Message"
-                                        required
-                                    ></textarea>
-                                    <div className="status-container">
-                                        <button
-                                            type="submit"
-                                            className="letsconnect rounded col-4 w-auto"
-                                            style={{ color: statusColor }}
-                                        >
-                                            <span>{send}</span>
-                                        </button>
-                                        {showAnimation && send === "Sent!" && (
-                                            <div
-                                                className="sent-animation"
-                                                style={{ color: "white", marginTop: "10px" }}
-                                            >
-                                                <span>✔ Email Sent Successfully...!😍</span>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div className="m-auto d-none d-md-block col-md-6 col-lg-6 col-xl-4 p-0">
-                            <img
-                                src={touch}
-                                alt="Get In Touch"
-                                className="getintouch"
-                            />
-                        </div>
-                    </div>
+                  <Col sm={6} className="mb-3">
+                    <input
+                      type="text"
+                      name="first_name"
+                      placeholder="First name"
+                      className="field form-control"
+                      required
+                    />
+                  </Col>
+                  <Col sm={6} className="mb-3">
+                    <input
+                      type="text"
+                      name="last_name"
+                      placeholder="Last name"
+                      className="field form-control"
+                      required
+                    />
+                  </Col>
                 </Row>
-            </Container>
-        </div>
-    );
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="field form-control mb-3"
+                  required
+                />
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  rows="5"
+                  className="field form-control mb-3"
+                  required
+                ></textarea>
+
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="btn-connect col-7 px-4 mt-2 rounded-3"
+                    style={{ color: statusColor }}
+                  >
+                    {send}
+                  </button>
+                  {showAnimation && send === "Sent!" && (
+                    <p className="mt-3 text-success fw-semibold">
+                      ✔ Email Sent Successfully! 😍
+                    </p>
+                  )}
+                </div>
+              </form>
+            </div>
+          </Col>
+          {/* Right Side - Image */}
+           <Col md={5} className="text-center d-none d-md-block ">
+             {/* <img src={touch} alt="Get In Touch" className="getintouch" /> */}
+              <img src={touch} alt="Get In Touch" className="" />
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
 };
 
 export default LetsConnect;

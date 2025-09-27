@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import navIcon1 from "../assets/img/Footer/Connect icons/nav-icon1.svg";
+import navIcon2 from "../assets/img/Footer/Connect icons/nav-icon2.svg";  
 
 export const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,8 +18,15 @@ export const NavBar = () => {
   return (
     <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
       <Container className="navcontainer animate__animated animate__slideInDown d-flex">
-        <Navbar.Brand href="#banner" className="head text-white">
-          <h2>My Profile</h2>
+        <Navbar.Brand href="#banner" className="head">
+          <div className="fs-4 fw-semibold cursor-pointer">
+            <span style={{ color: "#5db6cfb7" }}>&lt;</span>
+            <span className="text-white">Gowri</span>
+            <span style={{ color: "#e8c83def" }}>/</span>
+            <span className="text-white">Sankar</span>
+            <span style={{ color: "#5db6cfb7" }}>&gt;</span>
+          </div>
+
         </Navbar.Brand>
 
         {/* Navbar Toggle for Mobile */}
@@ -31,14 +40,14 @@ export const NavBar = () => {
             <Nav.Link href="#skills" className="menu text-light fs-5 me-3">Skills</Nav.Link>
             <Nav.Link href="#Experience" className="menu text-light fs-5 me-3">Experience</Nav.Link>
             <Nav.Link href="#projects" className="menu text-light fs-5 me-3">Projects</Nav.Link>
+            <Nav.Link href="#connect" className="menu text-light fs-5 me-3">Connect</Nav.Link>
           </Nav>
 
           {/* Connect Button */}
-          <span>
-            <a href="#connect">
-              <button className="letsconnect p-3 rounded fs-6"><span>Let’s Connect</span></button>
-            </a>
-          </span>
+          <div className="social-icon">
+            <a href="https://github.com/Shankarkasarapu"><img src={navIcon2} alt="Icon" /></a>
+            <a href="https://www.linkedin.com/in/gowri-shankar-kasarapu-75112623a/"><img src={navIcon1} alt="Icon" /></a>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
