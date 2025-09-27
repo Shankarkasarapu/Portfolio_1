@@ -7,8 +7,8 @@ import srichaitanya from "../assets/img/education/sri chaitanya.png";
 
 const educationData = [
     { year: "2021-25", title: "Bachelor's of Technology ", marks: "CGPA 8.72/10", img: gmr, description: "Completed my Bachelor's of Technology in Artificial Intelligence and Machine Learning at GMR Institute of Technology." },
-    { year: "2019-21", title: "Intermediate", marks: "Percentage 96%", img: srichaitanya, description: "Completed Higher Secondary Education from Sri Chaitanya Junior College." },
-    { year: "2019", title: "High School", marks: "CGPA 10/10", img: srichaitanya, description: "Completed my High School from Sri Chaitanya techno School." },
+    { year: "2019-21", title: "Intermediate", marks: "Percentage 96%", img: "https://th.bing.com/th/id/R.97536129fc23cba5e029ed121087eb94?rik=Zz3TCGpFpFakmA&riu=http%3a%2f%2fhyderabadboss.com%2fwp-content%2fuploads%2f2016%2f10%2fsri-chaitanya.jpg&ehk=UPeUPYrBz1Bm2HVwm84N2R1OHnVQOaMGVTecVPUyMq8%3d&risl=&pid=ImgRaw&r=0", description: "Completed Higher Secondary Education from Sri Chaitanya Junior College." },
+    { year: "2019", title: "High School", marks: "CGPA 10/10", img: "https://th.bing.com/th/id/R.97536129fc23cba5e029ed121087eb94?rik=Zz3TCGpFpFakmA&riu=http%3a%2f%2fhyderabadboss.com%2fwp-content%2fuploads%2f2016%2f10%2fsri-chaitanya.jpg&ehk=UPeUPYrBz1Bm2HVwm84N2R1OHnVQOaMGVTecVPUyMq8%3d&risl=&pid=ImgRaw&r=0", description: "Completed my High School from Sri Chaitanya techno School." },
 ];
 
 // Custom hook for in-view animation
