@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio of Gowri Sankar Kasarapu, built with React and Vite.
+Personal portfolio built with React and Vite.
 
 ## Features
 
