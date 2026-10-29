@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/logo.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Gowri Sankar Kasarapu: B.Tech AI &amp; ML graduate working in machine learning, data science and generative AI. Associate System Engineer at IBM." />
+    <meta name="theme-color" content="#0e1013" />
+    <title>Gowri Sankar Kasarapu | AI/ML &amp; Data Science</title>
+    <script>
+      // Apply saved/system theme before first paint to avoid a flash
+      (function () {
+        try {
+          var t = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
